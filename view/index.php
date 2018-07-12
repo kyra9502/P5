@@ -2,7 +2,7 @@
 
 session_start();
 require('../controller/controller.php');
-//include('../view/header.php');
+include('../view/header.php');
 
 //$post = listPost();
 ?>
