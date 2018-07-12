@@ -1,6 +1,6 @@
 <?php
 
-use P5\Model as database;
+namespace P5\Model;
 // Call BDD
 require_once ("../model/Manager.php");
 
