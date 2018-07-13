@@ -6,14 +6,17 @@ require_once ("../model/Manager.php");
 
 class PostManager extends Manager
 {
-	public function getOrderPost()
-	{
-		$db = $this->dbConnect();
-		$req = $db->query('SELECT id, title, post_date, content FROM post ORDER BY post_date DESC LIMIT 0, 3');
-		$post = $req->fetch();
+	
 
-		return $post;
-	}
+	public function listArticles()
+    {
+        $db = $this->dbConnect();
+        $req = $db->query("SELECT id, title, edit_date, edit_author, content, image FROM post ORDER BY edit_date DESC");
+        $req->execute();
+        $articles = $req->fetchAll();
+
+        return $articles;
+    }
 }
 
 ?>
