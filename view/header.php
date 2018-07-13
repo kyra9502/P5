@@ -47,10 +47,10 @@
                         <a href="index.php">Accueil</a>
                     </li>
                     <li class="page-scroll">
-                        <a href="">Blog</a>
+                        <a href="viewArticles.php">Blog</a>
                     </li>
                     <li class="page-scroll">
-                        <a href="">Contact</a>
+                        <a href="index.php#contact">Contact</a>
                     </li>
                     <li class="page-scroll">
                         <a href="../files/cv.pdf" target="_blank">Curriculum Vitae</a>
