@@ -26,3 +26,7 @@ include('../view/header.php');
 </header>
 
 <!-- Blog Section -->
+
+<?php
+include("../view/footer.php");
+?>
