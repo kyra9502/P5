@@ -26,7 +26,14 @@ include('../view/header.php');
 </header>
 
 <!-- Blog Section -->
-
+<?php
+if(isset($_POST['submit']))
+  {
+  echo "c'est bon" ;
+  }else {
+    echo"erreur";
+  }
+?>
 <!-- Contact Section -->
 <section id="contact">
     <div class="container">
@@ -40,7 +47,7 @@ include('../view/header.php');
             <div class="col-lg-8 col-lg-offset-2">
                 <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
                 <!-- The form should work on most web servers, but if the form is not working you may need to configure your web server differently. -->
-                <form name="sentMessage" id="contactForm" novalidate>
+                <form method="post" action="index.php" name="sentMessage" id="contactForm" novalidate>
                     <div class="row control-group">
                         <div class="form-group col-xs-12 floating-label-form-group controls">
                             <label>Nom</label>
@@ -66,7 +73,7 @@ include('../view/header.php');
                     <div id="success"></div>
                     <div class="row">
                         <div class="form-group col-xs-12">
-                            <button type="submit" class="btn btn-success btn-lg">Envoyer</button>
+                            <button type="submit" value="Envoyer"class="btn btn-success btn-lg">Envoyer</button>
                         </div>
                     </div>
                 </form>
