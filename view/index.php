@@ -28,7 +28,7 @@ include('../view/header.php');
 <!-- Blog Section -->
 
 <!-- Contact Section -->
-<section id="contact">
+<form method="post" action="index.php" id="contact">
     <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center">
@@ -73,7 +73,7 @@ include('../view/header.php');
             </div>
         </div>
     </div>
-</section>
+</form>
 
 <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
 <div class="scroll-top page-scroll hidden-sm hidden-xs hidden-lg hidden-md">
