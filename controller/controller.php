@@ -12,6 +12,21 @@ function listArticles()
     return $listArticles;
 }
 
+function completeArticles($idArticle)
+{
+	$postManager = new database \PostManager();
+	$article = $postManager->completeArticles($idArticle);
+
+	return $article;
+}
+
+function listComments($idArticle)
+{
+	$postManager = new database \PostManager();
+	$comments = $postManager->listComments($idArticle);
+
+	return $comments;
+}
 
 
 
