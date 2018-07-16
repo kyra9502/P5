@@ -39,7 +39,7 @@ foreach ($articles as $article) :
             <div class="row">
                 <div class="col-lg-12">
                     <p><?= isset($article['content'])? nl2br($shortContent).'...'.'
-                    <a class="btn btn-success btn-lg" href="article.php?id='.$article['id'].'">Lire en entier</a>' : 'void' ?></p>
+                    <a class="btn btn-success btn-lg" href="completeArticles.php?id='.$article['id'].'">Lire en entier</a>' : 'void' ?></p>
                     
                  </div>
                  <div class="col-lg-12 text-center">
