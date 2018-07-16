@@ -27,12 +27,13 @@ $comments = listComments($_GET['id']);
                 <p><?= isset($article['content'])? nl2br($article['content']) : 'void' ?></p>
                 <p><?= isset($_SESSION['validated'])? ($_SESSION['validated'] === 1 ? '<a class="btn btn-success btn-lg" href="editArticle.php?id='.$article['id'].'">Modifier</a>' :  '') : '' ?></p>
             </div>
-            <div class="col-lg-12">
-            	<p><a class="btn btn-success btn-lg" href="editArticle.php?id='.$article['id'].'">Modifier l'article</a></p>
-            </div>
+            
         </div>
         <div class="col-lg-12 text-center">
                 <p><img src='../img/'<?= isset($article['image'])? $article['image'] :'void'?> ?></img></p>
+        </div>
+        <div class="col-lg-12">
+                <p><?= '<a class="btn btn-success btn-lg" href="editArticle.php?id='.$article['id'].'">Modifier l\'article</a>'  ?></p>
         </div>
         <div class="row">
         	<div class="col-lg-12"><h4>Commentaires :</h4>
