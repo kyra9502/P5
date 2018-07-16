@@ -50,10 +50,19 @@ $comments = listComments($_GET['id']);
                 	?>
             </div>
 		</div>
-		
+	 </div>
 
-
-    </div>
+</section>
+<section class="success">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center"></br>
+                    <h3>Ajouter un commentaire</h3>
+                    <hr class="star-primary">
+                </div>
+                //Form
+            </div>
+        </div>
 </section>
 
 <?php
