@@ -47,6 +47,14 @@ function deleteArticle($idArticle)
 	}
 }
 
+function getAuthor($idArticle)
+{
+    $postManager = new database\PostManager();
+    $author = $postManager->getAuthor($idArticle);
+
+    return $author;
+}
+
 }
 
 

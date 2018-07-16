@@ -4,7 +4,9 @@ session_start();
 require('../controller/controller.php');
 include("../view/header.php");
 $article = completeArticles($_GET['id']);
-$articles =  updateArticle($updateTitle, $updateContent, $idArticle, $updateAuthor);
+
+$_SESSION['secureArticle'] = bin2hex(random_bytes(32));
+
 
 
 ?>
@@ -20,24 +22,27 @@ $articles =  updateArticle($updateTitle, $updateContent, $idArticle, $updateAuth
                 <section id="portfolio">
 			        <div class="container">
 			            <div class="row">
-			                <form method="post" class="text-center form-group" action="completeArticles.php?id=<?= $_GET['id'] ?>" method="post">
+			                <form method="post" class="text-center form-group" action="editArticleverif.php?id=<?= $_GET['id'] ?>" method="post">
 			                    <p style="color: green"><?= isset($_SESSION['updateMessage'])? $_SESSION['updateMessage'] : "" ?></p>
 			                    <div>
 			                        <label for="title">Titre</label><br />
-			                        <input type="text" id="updateTitle" name="articleTitle" size="50" value="<?= isset($articles['title'])? htmlspecialchars($articles['title']) :'titre' ?>" />
+			                        <input type="text" id="updateTitle" name="articleTitle" size="50" value="<?= isset($article['title'])? htmlspecialchars($article['title']) :'titre' ?>" />
 			                    </div></br>
 			                    <div>
 			                        <label for="author">Auteur</label><br />
-			                        <input type="text" id="updateAuthor" name="updateAuthor" value="<?= isset($articles['edit_author'])? htmlspecialchars($articles['edit_author']) :'auteur' ?>" />
-			                        <p style="font-size: 1em">Edité par <?= isset($articles['edit_author'])? $articles['edit_author'] : '' ?> </p>
+			                        <input type="text" id="updateAuthor" name="updateAuthor" value="<?= isset($author['username'])? htmlspecialchars($author['username']) :'auteur' ?>" />
+			                        
 			                    <div>
 			                        <br/><label for="content">Contenu</label><br />
-			                        <textarea id="articleContent" class="form-control" name="articleContent" rows="10"><?= isset($articles['content'])? nl2br(htmlentities($articles['content'])) : 'void' ?></textarea>
+			                        <textarea id="articleContent" class="form-control" name="articleContent" rows="10"><?= isset($article['content'])? nl2br(htmlentities($article['content'])) : '' ?></textarea>
 			                    </div></br>
 			                    <div>
 			                        <input type="submit" />
-			                        <input type="hidden" name="whiteIce" id="whiteIce" value="<?php echo $_SESSION['whiteIce']; ?>" />
+			                        <input type="hidden" name="secureArticle" id="secureArticle" value="<?php echo $_SESSION['secureArticle']; ?>" />
 			                    </div>
+			                    <div class="col-lg-12">
+					                <p><?= '<a class="btn btn-success btn-lg" href="completeArticles.php?id='.$article['id'].'">Retour</a>'  ?></p>
+					            </div>
 			                </form>
 			            </div>
 			        </div>
@@ -45,5 +50,6 @@ $articles =  updateArticle($updateTitle, $updateContent, $idArticle, $updateAuth
 </section>
 
 <?php
+unset($_SESSION['updateMessage']);
 include("../view/footer.php");
 ?>

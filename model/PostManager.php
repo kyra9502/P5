@@ -58,7 +58,15 @@ class PostManager extends Manager
         $req->execute(array($idArticle));
     }
 
+    public function getAuthor($idArticle)
+    {
+        $db = $this->dbConnect();
+        $req = $db->prepare("SELECT post.user_id, post.id, user.username FROM post RIGHT JOIN user ON post.user_id = user.id WHERE post.id = ?");
+        $req->execute(array($idArticle));
+        $author = $req->fetch();
 
+        return $author;
+    }
 
 
 
