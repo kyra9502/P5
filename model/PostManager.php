@@ -31,7 +31,7 @@ class PostManager extends Manager
     public function listComments($idArticle)
     {
     	$db = $this->dbConnect();
-    	$req = $db->prepare("SELECT post_id, author, content, DATE_FORMAT(comment_date, '%d-%m-%Y à %Hh%i') AS comment_date, authorized FROM comment WHERE post_id=? ORDER BY comment_date ASC");
+    	$req = $db->prepare("SELECT post_id, author, content, DATE_FORMAT(comment_date, '%d-%m-%Y à %Hh%i') AS comment_date, authorized  FROM comment WHERE post_id=? ORDER BY comment_date ASC");
     	$req->execute(array($idArticle));
     	$comments = $req->fetchAll();
 
