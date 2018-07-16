@@ -28,7 +28,26 @@ function listComments($idArticle)
 	return $comments;
 }
 
+function updateArticle($updateTitle, $updateContent, $idArticle, $updateAuthor)
+{
+	$postManager = new database \PostManager();
+	$updateArticle = $postManager->updateArticle($updateTitle, $updateContent, $idArticle, $updateAuthor);
+	if($updateArticle === false)
+	{
+		throw new exception("Impossible de modifier l'article !");
+	}
 
+function deleteArticle($idArticle)
+{
+	$postManager = new database \PostManager();
+	$deleteArticle = $postManager->deleteArticle($idArticle);
+	if($deleteArticle === false)
+	{
+		throw new exception("Impossible de supprimer l'article !");
+	}
+}
+
+}
 
 
 

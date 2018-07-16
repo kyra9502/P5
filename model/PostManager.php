@@ -38,6 +38,31 @@ class PostManager extends Manager
     	return $comments;
     }
 
+    public function updateArticle($updateTitle, $updateContent, $updateAuthor, $idArticle)
+    {
+        $db = $this->dbConnect();
+        $req = $db->prepare("UPDATE post SET title = :title, content = :content, edit_author = :edit_author, edit_date = NOW() WHERE id = :id");
+        $req->execute([
+            "title"=> $updateTitle,
+            "content"=>$updateContent,
+            "edit_author"=>$updateAuthor,
+            "id"=>$idArticle
+
+            ] );
+    }
+
+    public function deleteArticle($idArticle)
+    {
+        $db = $this->dbConnect();
+        $req = $db->prepare("DELETE FROM post WHERE id = ?");
+        $req->execute(array($idArticle));
+    }
+
+
+
+
+
+
 
 }
 
