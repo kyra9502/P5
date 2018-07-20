@@ -36,18 +36,16 @@ include('../view/header.php');
             </div>
             <div class="row">
                 <div class="col-lg-12 text-center portfolio-item">
-                    <a href="viewArticles.php" class="portfolio-link" data-toggle="modal">
-                        <div class="caption">
-                            <div class="caption-content">
-                                <i class="fa fa-search-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="../img/portfolio/portfolio.jpeg" class="img-responsive" alt="">
-                    </a>
+                    
+                        <a href="viewArticles.php">
+                        <img src="../img/portfolio/portfolio.jpeg"  alt="">
+                        </a>
+                    
                 </div>
             </div>
         </div>
 </section>
+
 
 <!-- Contact Section -->
 <section id="contact">
