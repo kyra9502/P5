@@ -26,6 +26,28 @@ include('../view/header.php');
 </header>
 
 <!-- Blog Section -->
+<section id="portfolio">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>Blog</h2>
+                    <hr class="star-primary">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 text-center portfolio-item">
+                    
+                        <a href="viewArticles.php">
+                        <img src="../img/portfolio/portfolio.jpeg"  alt="">
+                        </a>
+                    
+                </div>
+            </div>
+        </div>
+</section>
+<hr>
+<hr>
+
 
 <!-- Contact Section -->
 <section id="contact">
