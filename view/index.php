@@ -45,6 +45,8 @@ include('../view/header.php');
             </div>
         </div>
 </section>
+<hr>
+<hr>
 
 
 <!-- Contact Section -->
