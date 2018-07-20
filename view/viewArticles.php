@@ -40,14 +40,15 @@ foreach ($articles as $article) :
                 <div class="col-lg-12">
                     <p><?= isset($article['content'])? nl2br($shortContent).'...'.'
                     <a class="btn btn-success btn-lg" href="completeArticles.php?id='.$article['id'].'">Lire en entier</a>' : 'void' ?></p>
-                    
-                 </div>
-                 <div class="col-lg-12 text-center">
-                 	<p><img src='../img/'<?= isset($article['image'])? $article['image'] :''?> ?></img></p>
-                 </div>
-                 
-
+                  </div>
+            </div></br>
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                        <?php isset($article['image']) ? $image= $article['image'] : $image= '' ?>
+                     	<p><?php echo'<img src="../img/'.$image.'" class="img-responsive text-center""/>';?> </p>
+                </div>
             </div>
+             
         </div>
     </section>
 <?php endforeach; ?>
