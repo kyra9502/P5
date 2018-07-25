@@ -10,6 +10,7 @@ if (!isset($_GET['id']) || $_GET['id'] <= 0) {
 }
 $article = completeArticles($_GET['id']);
 $comments = listComments($_GET['id']);
+$_SESSION['blackIce'] = bin2hex(random_bytes(32));
 ?>
 
 <section id="portfolio">
@@ -56,10 +57,27 @@ $comments = listComments($_GET['id']);
                     <h3>Ajouter un commentaire</h3>
                     <hr class="star-primary">
                 </div>
-                //Form
+                <div class="col-lq-12 newComment">
+                    <form method="post" class="text-center form-group" action="addComment.php?id=<?= $article['id'] ?>" method="post">
+                    <div>
+                        <label for="author">Auteur</label><br />
+                        <input type="text" class="form-control" id="authorComment" name="authorComment" value="<?= isset($_SESSION['username'])? htmlspecialchars($_SESSION['username']) :'' ?>" />
+                    </div></br>
+                    <div>
+                        <label for="content">Commentaire</label><br />
+                        <textarea id="content" class="form-control" name="content" rows="10"></textarea>
+                    </div></br>
+                    <div>
+                        <input type="submit" />
+                        <input type="hidden" name="blackIce" id="blackIce" value="<?php echo $_SESSION['blackIce']; ?>" />
+                    </div>
+                </form>
+                </div>
             </div>
         </div>
 </section>
+
+
 
 <?php
 include("../view/footer.php");

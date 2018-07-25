@@ -26,11 +26,11 @@ $_SESSION['secureArticle'] = bin2hex(random_bytes(32));
 			                    <p style="color: green"><?= isset($_SESSION['updateMessage'])? $_SESSION['updateMessage'] : "" ?></p>
 			                    <div>
 			                        <label for="title">Titre</label><br />
-			                        <input type="text" id="updateTitle" name="articleTitle" size="50" value="<?= isset($article['title'])? htmlspecialchars($article['title']) :'titre' ?>" />
+			                        <input type="text" class="form-control" id="updateTitle" name="articleTitle" size="50" value="<?= isset($article['title'])? htmlspecialchars($article['title']) :'titre' ?>" />
 			                    </div></br>
 			                    <div>
 			                        <label for="author">Auteur</label><br />
-			                        <input type="text" id="updateAuthor" name="updateAuthor" value="<?= isset($author['username'])? htmlspecialchars($author['username']) :'auteur' ?>" />
+			                        <input type="text" class="form-control" id="updateAuthor" name="updateAuthor" value="<?= isset($author['username'])? htmlspecialchars($author['username']) :'auteur' ?>" />
 			                        
 			                    <div>
 			                        <br/><label for="content">Contenu</label><br />

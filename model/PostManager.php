@@ -68,7 +68,14 @@ class PostManager extends Manager
         return $author;
     }
 
+    public function postComment($idArticle, $authorComment, $content)
+    {
+        $db = $this->dbConnect();
+        $req = $db->prepare('INSERT INTO comment (post_id, author, content, comment_date, authorized) VALUES(?, ?, ?, NOW(), 0)');
+        $newComment = $req->execute(array($idArticle, $authorComment, $content));
 
+        return $newComment;
+    }
 
 
 
