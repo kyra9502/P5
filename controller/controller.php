@@ -36,6 +36,7 @@ function updateArticle($updateTitle, $updateContent, $idArticle, $updateAuthor)
 	{
 		throw new exception("Impossible de modifier l'article !");
 	}
+}
 
 function deleteArticle($idArticle)
 {
@@ -55,8 +56,15 @@ function getAuthor($idArticle)
     return $author;
 }
 
-}
+function newComment($idArticle, $authorComment, $content)
+{
+    $postManager = new database\PostManager();
+    $newComment = $postManager->postComment($idArticle, $authorComment, $content);
 
+    if ($newComment === false) {
+        throw new Exception('Impossible d\'ajouter le commentaire !');
+    }
+}
 
 
 
