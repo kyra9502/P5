@@ -21,7 +21,7 @@ class PostManager extends Manager
     public function completeArticles($idArticle)
     {
     	$db = $this->dbConnect();
-        $req = $db->prepare("SELECT id, user_id, title, content, edit_author, DATE_FORMAT(post_date, '%d-%m-%Y à %Hh%i') AS post_date, DATE_FORMAT(edit_date, '%d-%m-%Y à %Hh%i') AS edit_date FROM post WHERE id = ?");
+        $req = $db->prepare("SELECT id, user_id, title,image, content, edit_author, DATE_FORMAT(post_date, '%d-%m-%Y à %Hh%i') AS post_date, DATE_FORMAT(edit_date, '%d-%m-%Y à %Hh%i') AS edit_date FROM post WHERE id = ?");
         $req->execute(array($idArticle));
         $article = $req->fetch();
 
