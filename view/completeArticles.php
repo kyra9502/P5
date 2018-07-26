@@ -13,25 +13,29 @@ $comments = listComments($_GET['id']);
 $_SESSION['blackIce'] = bin2hex(random_bytes(32));
 ?>
 
-<section id="portfolio">
+<section class="success">
     <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center">
                 <h2><?= isset($article['title'])? htmlspecialchars($article['title']) :'titre' ?></h2>
-            </div>
+            </div></br></br>
             <p class="text-center">Publié le <?= isset($article['post_date'])? $article['post_date']: '' ?> par <?= isset($article['edit_author'])? $article['edit_author'] : '' ?> </p>
             <p class="text-center"><?= isset($article['edit_date'])? 'Dernère modification le '.$article['edit_date']: '' ?></p>
         </div>
+</section>
+
+<section id="portfolio">
+    <div class="container">
         <div class="row">
             <div class="col-lg-12">
                 <p><?= isset($article['content'])? nl2br($article['content']) : 'void' ?></p>
                 <p><?= isset($_SESSION['validated'])? ($_SESSION['validated'] === 1 ? '<a class="btn btn-success btn-lg" href="editArticle.php?id='.$article['id'].'">Modifier</a>' :  '') : '' ?></p>
             </div>
-        </div>
-       <div class="col-lg-12">
+        </div></br></br>
+        <div class="col-lg-12">
                 <p><?= '<a class="btn btn-success btn-lg" href="editArticle.php?id='.$article['id'].'">Modifier l\'article</a>'  ?></p>
         </div></br>
-        <div class="row">
+        <div class="row"></br></br>
         	<div class="col-lg-12"><h4>Commentaires :</h4>
         		<?php
         		// display valide comments
