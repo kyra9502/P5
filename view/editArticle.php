@@ -5,10 +5,6 @@ require('../controller/controllerArticle.php');
 include("../view/header.php");
 $article = completeArticles($_GET['id']);
 
-$_SESSION['secureArticle'] = bin2hex(random_bytes(32));
-
-
-
 ?>
 
 
@@ -22,7 +18,7 @@ $_SESSION['secureArticle'] = bin2hex(random_bytes(32));
                 <section id="portfolio">
 			        <div class="container">
 			            <div class="row">
-			                <form method="post" class="text-center form-group" action="editArticleverif.php?id=<?= $_GET['id'] ?>" method="post">
+			                <form method="post" class="text-center form-group" action="modifArticle.php?id=<?= $_GET['id'] ?>" method="post">
 			                    <p style="color: green"><?= isset($_SESSION['updateMessage'])? $_SESSION['updateMessage'] : "" ?></p>
 			                    <div>
 			                        <label for="title">Titre</label><br />
@@ -37,9 +33,8 @@ $_SESSION['secureArticle'] = bin2hex(random_bytes(32));
 			                        <textarea id="articleContent" class="form-control" name="articleContent" rows="10"><?= isset($article['content'])? nl2br(htmlentities($article['content'])) : '' ?></textarea>
 			                    </div></br>
 			                    <div>
-			                        <input type="submit" />
-			                        <input type="hidden" name="secureArticle" id="secureArticle" value="<?php echo $_SESSION['secureArticle']; ?>" />
-			                    </div>
+			                        <input type="submit" name ="valider" />
+			                      </div>
 			                    <div class="col-lg-12">
 					                <p><?= '<a class="btn btn-success btn-lg" href="completeArticles.php?id='.$article['id'].'">Retour</a>'  ?></p>
 					            </div>
