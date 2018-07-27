@@ -1,7 +1,8 @@
 <?php
 session_start();
 
-require('../controller/controller.php');
+require('../controller/controllerArticle.php');
+require('../controller/controllerComment.php');
 include('../view/header.php');
 
 if (!isset($_GET['id']) || $_GET['id'] <= 0) {

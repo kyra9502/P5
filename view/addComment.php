@@ -1,6 +1,6 @@
 <?php
 session_start();
-require('../controller/controller.php');
+require('../controller/controllerComment.php');
 
 /**
 * Security for Comment Form, adding Comment

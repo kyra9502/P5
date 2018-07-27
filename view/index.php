@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-require('../controller/controller.php');
+require('../controller/controllerArticle.php');
 include('../view/header.php');
 
 //$post = listPost();
