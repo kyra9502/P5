@@ -11,7 +11,7 @@ if (!isset($_GET['id']) || $_GET['id'] <= 0) {
 }
 $article = completeArticles($_GET['id']);
 $comments = listComments($_GET['id']);
-$_SESSION['blackIce'] = bin2hex(random_bytes(32));
+
 ?>
 
 <section class="success">
@@ -45,7 +45,7 @@ $_SESSION['blackIce'] = bin2hex(random_bytes(32));
         <div class="row"></br></br>
         	<div class="col-lg-12"><h4>Commentaires :</h4>
         		<?php
-        		// display valide comments
+        		
         		foreach ($comments as $comment) :
         			if ($comment['authorized'] == 1)
         			{
@@ -69,18 +69,18 @@ $_SESSION['blackIce'] = bin2hex(random_bytes(32));
                     <hr class="star-primary">
                 </div>
                 <div class="col-lq-12 newComment">
-                    <form method="post" class="text-center form-group" action="addComment.php?id=<?= $article['id'] ?>" method="post">
+                    <form method="post" class="text-center form-group" action="newComment.php?id=<?= $article['id'] ?>" method="post">
                     <div>
                         <label for="author">Auteur</label><br />
-                        <input type="text" class="form-control" id="authorComment" name="authorComment" value="<?= isset($_SESSION['username'])? htmlspecialchars($_SESSION['username']) :'' ?>" />
+                        <input type="text" class="form-control" id="authorComment" name="authorComment" />
                     </div></br>
                     <div>
                         <label for="content">Commentaire</label><br />
                         <textarea id="content" class="form-control" name="content" rows="10"></textarea>
                     </div></br>
                     <div>
-                        <input type="submit" />
-                        <input type="hidden" name="blackIce" id="blackIce" value="<?php echo $_SESSION['blackIce']; ?>" />
+                        <input type="submit" name="valider" />
+                        
                     </div>
                 </form>
                 </div>

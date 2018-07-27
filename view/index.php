@@ -4,7 +4,7 @@ session_start();
 require('../controller/controllerArticle.php');
 include('../view/header.php');
 
-//$post = listPost();
+
 ?>
 
 <!-- Header -->
@@ -35,13 +35,11 @@ include('../view/header.php');
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-12 text-center portfolio-item">
-                    
-                        <a href="viewArticles.php">
+                <div class="img-responsive text-center portfolio-item">
+                    <a href="viewArticles.php">
                         <img src="../img/portfolio/portfolio.jpeg"  alt="">
                         </a>
-                    
-                </div>
+                 </div>
             </div>
         </div>
 </section>

@@ -20,7 +20,7 @@ $articles = listArticles();
         </div>
 </section>
 <?php
-// Display all articles with short version and link for unique article
+
 foreach ($articles as $article) :
     $shortContent = substr($article['content'], 0, 250);
     $id = $article['id'];
