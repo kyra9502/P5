@@ -51,7 +51,7 @@
                         <a href="">Dashboard</a>
                     </li>
                     <li class="page-scroll">
-                        <a href="">Articles</a>
+                        <a href="articles.php">Articles</a>
                     </li>
                     <li class="page-scroll">
                         <a href="">Commentaires</a>

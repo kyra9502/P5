@@ -25,15 +25,21 @@ include('../view/header.php');
     <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center">
-                <form method="post" action="connexion.php">
+                <form method="post" action="dashboard.php">
                 	<p>Adresse email : <input type="text" name="email"/></p></br>
                 	<p>Mot de passe : <input type="password" name="m2p"/></p></br>
-                	<input type="submit" name="valider" value="Se conncter"/>
-				</form>
+                	<input type="submit" name="valider" value="Se connecter"/>
+                 </form></br><hr>
+                 <form method="post" action="newUser.php">
+                    <p>Créer un compte</p>
+                    <input type="submit" name="valider" value="Nouveau"/>
+                 </form>
             </div>
         </div>
     </div>
 </section>
+
+
 
 
 

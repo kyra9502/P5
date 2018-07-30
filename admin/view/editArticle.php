@@ -36,7 +36,7 @@ $article = completeArticles($_GET['id']);
 			                        <input type="submit" name ="valider" />
 			                      </div>
 			                    <div class="col-lg-12">
-					                <p><?= '<a class="btn btn-success btn-lg" href="completeArticles.php?id='.$article['id'].'">Retour</a>'  ?></p>
+					                <p><?= '<a class="btn btn-success btn-lg" href="articles.php?id='.$article['id'].'">Retour</a>'  ?></p>
 					            </div>
 			                </form>
 			            </div>
