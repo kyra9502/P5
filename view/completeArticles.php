@@ -39,10 +39,7 @@ $comments = listComments($_GET['id']);
                 <p><?= isset($_SESSION['validated'])? ($_SESSION['validated'] === 1 ? '<a class="btn btn-success btn-lg" href="editArticle.php?id='.$article['id'].'">Modifier</a>' :  '') : '' ?></p>
             </div>
         </div></br></br>
-        <div class="col-lg-12">
-                <p><?= '<a class="btn btn-success btn-lg" href="editArticle.php?id='.$article['id'].'">Modifier l\'article</a>'  ?></p>
-        </div></br>
-        <div class="row"></br></br>
+         <div class="row"></br></br>
         	<div class="col-lg-12"><h4>Commentaires :</h4>
         		<?php
         		

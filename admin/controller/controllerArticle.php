@@ -54,8 +54,9 @@ function newArticle($title, $authorArticle, $content)
     $newArticle = $Article->postArticle($title, $authorArticle, $content);
 
     if ($newArticle === false) {
-        throw new Exception('Impossible d\'ajouter le commentaire !');
+        throw new Exception('Impossible d\'ajouter l\'article !');
     }
+
 }
 
 ?>

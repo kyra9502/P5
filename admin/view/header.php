@@ -54,7 +54,7 @@
                         <a href="articles.php">Articles</a>
                     </li>
                     <li class="page-scroll">
-                        <a href="">Commentaires</a>
+                        <a href="comment.php">Commentaires</a>
                     </li>
                     <li class="page-scroll">
                         <a href="">Déconnexion</a>

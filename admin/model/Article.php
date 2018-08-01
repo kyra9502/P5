@@ -43,7 +43,9 @@ class Article extends Manager
     {
         $db = $this->dbConnect();
         $req = $db->prepare("DELETE FROM post WHERE id = ?");
-        $req->execute(array($idArticle));
+        $deleteArticle=$req->execute(array($idArticle));
+
+        return $deleteArticle;
     }
 
     public function getAuthor($idArticle)
@@ -59,8 +61,8 @@ class Article extends Manager
     public function postArticle($title, $authorArticle, $content)
     {
         $db = $this->dbConnect();
-        $req = $db->prepare('INSERT INTO post (title, content, post_date, edit_author) VALUES(?, ?, NOW(), ?)');
-        $newArticle = $req->execute(array($title, $authorArticle, $content));
+        $req = $db->prepare('INSERT INTO post (title, content, post_date,edit_author) VALUES(?,?,NOW(), ?)');
+        $newArticle=$req->execute(array($title, $authorArticle, $content));
 
         return $newArticle;
     }
