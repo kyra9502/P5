@@ -27,7 +27,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
-                        Copyright 2018 - <a href="" data-toggle="modal" data-target="#myModal">Mentions Légales</a> - <a href="../admin/view/login.php" class="admin-link">Administration </a>
+                        Copyright 2018 - <a href="" data-toggle="modal" data-target="#myModal">Mentions Légales</a> - <a href="../view/login.php" class="admin-link">Administration </a>
                     </div>
                 </div>
             </div>
